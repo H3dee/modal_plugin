@@ -76,7 +76,7 @@ input[type='checkbox'] {
 }
 
 .wrapper {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   height: 100vh;
   width: 100%;
   display: -webkit-box;
@@ -89,15 +89,144 @@ input[type='checkbox'] {
   padding: 5px;
 }
 
-.content {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 18px;
-  text-align: justify;
+.content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__info .card__btns button, .modal .modal__window .modal__footer .modal__buttons button {
+  border-radius: 4px;
+  margin: 0px 5px 0px 0px;
+  padding: 6px 12px;
+  font-size: 16px;
+  color: #ffffff;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  -webkit-transition: background 0.15s ease-in;
+  transition: background 0.15s ease-in;
 }
 
 .content h1 {
+  font-weight: 700;
   text-align: center;
+  margin: 15px 0;
+  font-size: 21px;
+}
+
+.content .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 18px;
+  padding: 0px 10px;
+}
+
+.content .container .content__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .container .content__row .content__body {
+  text-align: justify;
+  line-height: 23px;
+  padding: 0px 16px;
+}
+
+.content .container .content__row .content__fruits {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.content .container .content__row .content__fruits .fruits__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.content .container .content__row .content__fruits .container .fruits__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0px -16px 0px 0px;
+}
+
+.content .container .content__row .content__fruits .container .fruits__row .fruits__card {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33.3333%;
+          flex: 1 1 33.3333%;
+  margin: 0px 16px 0px 0px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__image img {
+  height: 100%;
+  width: 100%;
+}
+
+.content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__info {
+  padding: 8px;
+}
+
+.content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__info .card__subtitle {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__info .card__btns button:first-child {
+  background: #007bff;
+}
+
+.content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__info .card__btns button:first-child:hover {
+  background: #0150a3;
+}
+
+.content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__info .card__btns button:last-child {
+  background: #dc3545;
+}
+
+.content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__info .card__btns button:last-child:hover:hover {
+  background: #b12432;
+}
+
+.modal.open .modal__overlay,
+.modal.open .modal__window, .modal.close .modal__overlay,
+.modal.close .modal__window {
+  opacity: 1;
+  z-index: 200;
+}
+
+.modal .modal__overlay,
+.modal .modal__window {
+  opacity: 0;
+  z-index: -1;
+}
+
+.modal.open .modal__overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal.open .modal__overlay .modal__window {
+  -webkit-transform: translateY(150px);
+          transform: translateY(150px);
+}
+
+.modal.close .modal__overlay {
+  background: rgba(0, 0, 0, 0);
+}
+
+.modal.close .modal__window {
+  -webkit-transform: translateY(-200px);
+          transform: translateY(-200px);
 }
 
 .modal .modal__overlay {
@@ -106,21 +235,28 @@ input[type='checkbox'] {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.5);
-  padding-top: 150px;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: background 0.35s;
+  transition: background 0.35s;
 }
 
 .modal .modal__window {
   width: 600px;
   background: #ffffff;
   border-radius: 5px;
-  margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
+  margin: 0px auto;
+  -webkit-transition: -webkit-transform 0.35s ease-in;
+  transition: -webkit-transform 0.35s ease-in;
+  transition: transform 0.35s ease-in;
+  transition: transform 0.35s ease-in, -webkit-transform 0.35s ease-in;
+  -webkit-transform: translateY(-200px);
+          transform: translateY(-200px);
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
 
 .modal .modal__window .modal__header {
-  padding: 10px 5px;
+  padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,6 +269,7 @@ input[type='checkbox'] {
 .modal .modal__window .modal__header .modal__close {
   height: 16px;
   width: 16px;
+  opacity: 0.8;
   cursor: pointer;
 }
 
@@ -143,7 +280,7 @@ input[type='checkbox'] {
 }
 
 .modal .modal__window .modal__header .modal__close:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .modal .modal__window .modal__header .modal__title {
@@ -151,9 +288,37 @@ input[type='checkbox'] {
 }
 
 .modal .modal__window .modal__body {
-  padding: 10px 5px;
+  padding: 10px;
+  text-align: justify;
+  line-height: 20px;
+  text-indent: 15px;
+  color: #212529;
 }
 
 .modal .modal__window .modal__footer {
   border-top: 1px solid #ccc;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.modal .modal__window .modal__footer .modal__buttons button:first-child {
+  background: #6c757d;
+}
+
+.modal .modal__window .modal__footer .modal__buttons button:last-child {
+  background: #007bff;
+  margin: 0;
+}
+
+.modal .modal__window .modal__footer .modal__buttons button:hover:first-child {
+  background: #484e53;
+}
+
+.modal .modal__window .modal__footer .modal__buttons button:hover:last-child {
+  background: #0150a3;
 }
