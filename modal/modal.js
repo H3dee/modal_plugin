@@ -1,3 +1,5 @@
+const generateRandomId = (min = 1, max = 100) => Math.round(Math.random() * (max - min) + min)
+
 const _createCards = (selector, data) => {
   const container = document.querySelector(selector);
   const cards = data.reduce((acc, item) => {
@@ -53,8 +55,6 @@ const _createCards = (selector, data) => {
   </div>`;
 };
 
-const generateRandomId = (min = 1, max = 100) => Math.round(Math.random() * (max - min) + min)
-
 const _createModal = (options) => {
   const defaultValues = {
     TITLE: "default title",
@@ -109,13 +109,12 @@ const _createModal = (options) => {
 $.modal = function (options) {
   let $modal = _createModal(options);
   const $cardContainer = document.querySelector(".fruits__row");
-  const ANIMATION_SPEED = 350;
   const modalContent = document.querySelector('.modal__content');
-  let newId = 1
+  const ANIMATION_SPEED = 350;
   let closing = false;
   let isDestroyed = false;
 
-  //Set listener to cards' parent
+  //Set listener to cards' container
   $cardContainer.addEventListener("click", handleBtnClick);
 
   //card's button handler
@@ -139,16 +138,16 @@ $.modal = function (options) {
     }
   
     //Remove card
-    else if(et.dataset.card__btn && (et.getAttribute('id') === 'removeBtn')){
-      options.cards = options.cards
-                             .filter((item, index) =>  index !== (+id - 1))
-      options.cards.forEach(item => {
-        item.id = newId
-        newId++
-      });
+    // else if(et.dataset.card__btn && (et.getAttribute('id') === 'removeBtn')){
+    //   options.cards = options.cards
+    //                          .filter((item, index) =>  index !== (+id - 1))
+    //   options.cards.forEach(item => {
+    //     item.id = newId
+    //     newId++
+    //   });
               
-      _createCards(`[data-container='content']`, options.cards)
-    }
+    //   _createCards(`[data-container='content']`, options.cards)
+    // }
   }
 
   //open modal
