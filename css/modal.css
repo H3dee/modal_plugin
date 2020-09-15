@@ -99,6 +99,7 @@ input[type='checkbox'] {
   letter-spacing: 0.5px;
   -webkit-transition: background 0.15s ease-in;
   transition: background 0.15s ease-in;
+  margin: 0px 0px 8px 0px;
 }
 
 .content h1 {
@@ -153,21 +154,31 @@ input[type='checkbox'] {
 }
 
 .content .container .content__row .content__fruits .container .fruits__row .fruits__card {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 33.3333%;
-          flex: 1 1 33.3333%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 33.3333%;
+          flex: 0 1 33.3333%;
   margin: 0px 16px 0px 0px;
   border: 1px solid #ccc;
   overflow: hidden;
+  -webkit-transition: -webkit-box-flex 0.15s ease-in;
+  transition: -webkit-box-flex 0.15s ease-in;
+  transition: flex 0.15s ease-in;
+  transition: flex 0.15s ease-in, -webkit-box-flex 0.15s ease-in, -ms-flex 0.15s ease-in;
   border-radius: 10px;
 }
 
 .content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__image {
-  max-height: 100%;
-  max-width: 100%;
+  -webkit-transition: width 0.15s ease-in;
+  transition: width 0.15s ease-in;
+  width: 375px;
+  max-height: 290px;
+  height: 290px;
+  max-width: 375px;
 }
 
 .content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__image img {
+  -o-object-fit: contain;
+     object-fit: contain;
   height: 100%;
   width: 100%;
 }
@@ -188,14 +199,6 @@ input[type='checkbox'] {
 
 .content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__info .card__btns button:first-child:hover {
   background: #0150a3;
-}
-
-.content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__info .card__btns button:last-child {
-  background: #dc3545;
-}
-
-.content .container .content__row .content__fruits .container .fruits__row .fruits__card .card__info .card__btns button:last-child:hover:hover {
-  background: #b12432;
 }
 
 .modal.open .modal__overlay,
@@ -293,6 +296,12 @@ input[type='checkbox'] {
   line-height: 20px;
   text-indent: 15px;
   color: #212529;
+}
+
+.modal .modal__window .modal__body .modal__content p span {
+  color: #17a2b8;
+  font-size: 18px;
+  padding: 0px 5px 0px 0px;
 }
 
 .modal .modal__window .modal__footer {
